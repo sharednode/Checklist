@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/topics_list"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/gray"
+        android:dividerHeight="4dp"
+        android:choiceMode="multipleChoice"/>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:layout_marginRight="5dp"/>
+
+</RelativeLayout>

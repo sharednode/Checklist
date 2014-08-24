@@ -1,0 +1,25 @@
+{
+  "name": "Checklist",
+  "version": "1.0.0",
+  "homepage": "https://github.com/fmendes6/Checklist",
+  "authors": "Marco Talento <marcotalento90@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.19",
+    "bootstrap": "~3.2.0",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.14",
+    "requirejs-domready": "~2.0.1",
+    "momentjs": "~2.8.1",
+    "angular-route": "~1.2.21",
+    "toastr": "~2.0.3"
+  }
+}

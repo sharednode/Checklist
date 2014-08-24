@@ -1,0 +1,7 @@
+{
+  "name": "Configurations",
+  "version": "1.0.0",
+  "author": "Marco Talento <marcotalento90@gmail.com>",
+  "private": true,
+  "main": "./configurations.js"
+}

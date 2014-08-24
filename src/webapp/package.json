@@ -1,0 +1,7 @@
+{
+  "name": "checklist",
+  "version": "0.0.1",
+  "author": "Marco Talento <marcotalento90@gmail.com>",
+  "private": true,
+  "main": "./app.js"
+}

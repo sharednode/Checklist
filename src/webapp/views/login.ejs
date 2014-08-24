@@ -1,0 +1,19 @@
+<% layout('./layout/layout') -%>
+
+<div class="container">
+  
+  <form class="form-signin" role="form" action="/account/login" method="POST">
+    <h2 class="form-signin-heading text-center">Please sign in</h2>
+    <% if (message.length > 0) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+    <input name="email" type="email" class="form-control" placeholder="Email address" required autofocus>
+    <input name="password" type="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+
+  <div class="alert alert-warning text-center" role="alert">
+  	The login it's just for administration!
+  </div>
+
+</div>

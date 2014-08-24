@@ -310,7 +310,3 @@ logs
 #Bower
 bower_components
 vendor
-Android/Checklist/.idea/libraries/gson_2_2_4.xml
-Android/Checklist/.idea/libraries/okhttp_2_0_0.xml
-Android/Checklist/.idea/libraries/okio_1_0_0.xml
-Android/Checklist/.idea/libraries/okvolley_1_0_10.xml

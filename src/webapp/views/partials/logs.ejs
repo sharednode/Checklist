@@ -1,0 +1,40 @@
+<h1 class="page-header">Logs</h1>  
+
+<div ng-init="initLogPage()" >
+  <form ng-submit="getLogs()" class="form-inline pull-right">
+    
+    <select ng-change="changeLevel()" name="level" ng-model="model.searchFilter.selectedLevel" class="form-control">
+      <option ng-repeat="level in model.searchFilter.levels">{{level}}</option>
+    </select>
+
+    <div class="input-group">
+      <input type="number" class="form-control" name="page" ng-change="getLogs()" ng-model="model.searchFilter.currentPage" value="{{model.searchFilter.currentPage}}">
+      <span class="input-group-addon">of {{model.searchFilter.numPages}}</span>
+    </div>
+    <div class="btn-group">
+      <span>
+        <button type="submit" class="btn btn-info" ng-disabled="model.searchFilter.currentPage == 1" ng-click="model.searchFilter.currentPage = model.searchFilter.currentPage - 1"> « </button>
+      </span>
+      <span>
+        <button type="submit" class="btn btn-info" ng-disabled="model.searchFilter.currentPage == model.searchFilter.numPages" ng-click="model.searchFilter.currentPage = model.searchFilter.currentPage + 1"> » </button>
+      </span>
+    </div>
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Level</th>
+        <th>Message</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+      <tr ng-repeat="log in model.logs" ng-class="{danger: log.level == 'error'}" >
+        <td>{{log.level}}</td>
+        <td>{{log.message}}</td>
+        <td>{{convertToLocalDate(log.timestamp)}}</td>
+      </tr>
+    <tbody>
+     </tbody>
+  </table>
+</div>

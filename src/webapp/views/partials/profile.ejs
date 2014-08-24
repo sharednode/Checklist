@@ -1,0 +1,18 @@
+<h1 class="page-header">Profile</h1>      
+<h4>Welcome <strong><%= user._id %></strong> <span class="glyphicon glyphicon-thumbs-up"></span> </h4>
+<div class="subContent">
+  <div class="form-group">
+    <label for="id">Username</label>
+    <input name="_id" readonly type="text" class="form-control inputHalf" value="<%= user._id %>" >
+  </div>
+  <div class="form-group">
+    <label for="id">Email</label>
+    <input name="email" readonly type="email" class="form-control inputHalf" value="<%= user.email %>">
+  </div>
+  <div class="form-group">
+    <label for="id">Password</label>
+    <input name="password" readonly type="password" class="form-control inputHalf"  value="*********">
+  </div>
+</div>
+
+

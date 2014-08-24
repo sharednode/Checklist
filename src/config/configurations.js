@@ -10,7 +10,7 @@ module.exports = {
 	},
 	webServer:    {
 		port: '3001',
-		routes: ['/', '/admin', '/account', '/api/category'] 
+		routes: ['/admin', '/account', '/api/category'] 
 	},
 	authentication:{
 		superUser:

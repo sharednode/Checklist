@@ -8,18 +8,14 @@ define([
     'angular',
     'angular-route',
     './controllers/index',
-//  './directives/index',
-//  './filters/index',
     './services/index',
 ], function (toastr, moment, angular) {
     'use strict';
 
-    var myApp = angular.module('app', ['app.controllers',/*'app.directives','app.filters',*/'app.services', 'ngRoute']);
+    var myApp = angular.module('app', ['app.controllers','app.services', 'ngRoute']);
 
     myApp.run(function($rootScope) {
-        $rootScope.convertToLocalDate = function(date){
-            return moment(date).format('YYYY-MM-DD HH:mm:ss');
-        };
+        //Inject global functions before app start!
     });
 
     /*Config the toastr - http://codeseven.github.io/toastr/demo.html*/

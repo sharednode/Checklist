@@ -1,0 +1,31 @@
+<div ng-init="getCategory()">
+
+
+  <div ng-if="!category" class="jumbotron">
+    <div class="container text-center">
+      <h1>Invalid Category</h1>
+    </div>
+  </div>
+
+
+  <div ng-if="category">
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>{{category._id}}</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div ng-repeat="topic in category.topics" class="col-md-4">
+          <h2>{{topic.name}}</h2>
+          <p>{{topic.description}}</p>
+          <ul>
+            <li ng-repeat="link in topic.links">
+              <a href="{{link.url}}">{{link.url}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

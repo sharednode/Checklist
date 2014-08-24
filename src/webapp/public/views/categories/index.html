@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Checklist for developers!</h1>
+  </div>
+</div>
+
+<div class="container" ng-init="getCategoriesInfo()">
+  <div ng-if="!categories">
+    <p>Does not exists any category.</p>
+  </div>
+  <div class="row">
+    <div ng-repeat="category in categories" class="col-md-4">
+        <h2>{{category._id}}</h2>
+        <p>{{category.description}}</p>
+        <p><a class="btn btn-default" href="/category/{{category._id}}" role="button">Details <span class="glyphicon glyphicon-info-sign"></span></a></p>
+    </div>
+  </div>
+</div>

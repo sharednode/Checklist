@@ -2,23 +2,24 @@ define(['./app'], function (app) {
     'use strict';
     return app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         
-        $routeProvider.when('/account', {
-            templateUrl: '/partials/profile.ejs',
-            controller: 'adminController'
+        $routeProvider.when('/', {
+            templateUrl: '/views/categories/index.html',
+            controller: 'categoriesController'
         });
 
-        $routeProvider.when('/admin/logs', {
-            templateUrl: '/partials/logs.ejs',
-            controller: 'adminController'
+        $routeProvider.when('/category/:id', {
+            templateUrl: '/views/categories/details.html',
+            controller: 'categoriesController'
         });
 
-        $routeProvider.when('/admin/users', {
-            templateUrl: '/partials/users.ejs',
-            controller: 'adminController'
+
+        /*Handle Not Found Routes*/
+        $routeProvider.when('/notFound', {
+            templateUrl: '/views/errors/notFound.html'
         });
 
         $routeProvider.otherwise({
-            redirectTo: '/'
+            redirectTo: '/notFound'
         });
 
         $locationProvider.html5Mode(true);

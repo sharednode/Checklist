@@ -7,7 +7,6 @@ app = express(),
 config = require('../config'),
 routes = config.webServer.routes,
 logger = require('../logger'),
-engine = require('ejs-locals'),
 cookieParser = require('cookie-parser'),
 session = require('express-session'),
 passport = require('passport'),
@@ -30,12 +29,8 @@ app.use(passport.initialize());
 app.use(passport.session()); //Persistent login sessions
 app.use(flash()); //Passport messages support
 
-
 // View engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
-app.engine('ejs', engine);
 
 //Log all requests
 app.use(function(req, res, next){
@@ -49,13 +44,6 @@ app.use(function(req, res, next){
   next();
 });
 
-
-app.get('/partials/:filename', function(req, res) {
-  var filename = req.params.filename;
-  res.render("partials/" + filename);
-});
-
-
 //Register Routes
 for(var i = 0; i < routes.length; ++i){
     var routeFile = routes[i];
@@ -64,6 +52,11 @@ for(var i = 0; i < routes.length; ++i){
 
     app.use(routes[i], require('./routes' + routeFile));
 }
+
+//(Angular will handle the routes)
+app.get('*', function(req, res) {
+  res.sendfile(__dirname + '/public/views/index.html');
+});
 
 //Handle 404 Responses
 app.use(function(req, res) {
